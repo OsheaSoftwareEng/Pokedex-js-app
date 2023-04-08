@@ -1,0 +1,118 @@
+    :root {
+        --H1font-family: 'Press Start 2P', cursive;
+        
+    }
+    /*Generic Styles*/
+    html {
+        font-size: 62.5%;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    body {
+        background-color: #000000;
+        background-image: linear-gradient(315deg, #000000 0%, #958e69 74%);
+
+    }
+
+    /*Page Heading Styles */
+
+    .pokedex-heading {
+        font-size: 3.5rem;
+        color: #ffc800;
+        font-family: var(--H1font-family);
+        position: relative;
+        top: 15px;
+        right: 10px;
+    }
+
+    .logo-header {
+        display: flex;
+        position: relative;
+        right: 35px;
+        min-width: 1653px;
+    }
+
+    .pokemon-button {
+        width: 100%;
+        min-width: 250px; 
+        max-width: 300px; 
+        padding: 16px 18px;
+        background-color: #d2a813;
+        background-image: linear-gradient(315deg, #d2a813 0%, #000000 74%);
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: azure;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .pokeball-logo {
+        width: 9%;
+        min-width: 9%;
+    }
+
+
+    /*Media Quieres*/
+    @media all and (max-width: 360px){
+        .pokemon-button {
+            margin-left: -15px;
+        }
+        .pokedex-heading {
+            font-size: 3rem;
+        }
+
+    @media all and (max-width:328px){
+        .pokedex-heading {
+            margin-left: -13px;
+        }
+    }    
+
+    @media all and (max-width:317px){
+        .pokeball-logo {
+            width: 8%;
+            min-width: 8%;
+        }
+        .pokedex-heading {
+            font-size: 2.8rem;
+        }
+    }
+
+    @media all and (max-width: 313px){
+        .pokemon-button {
+    margin-left: -20px;
+        }
+
+    @media all and (max-width: 280px){
+        .pokemon-button {
+    margin-left: -35px;
+        }
+        .pokeball-logo {
+            width: 6%;
+            min-width: 6%;
+            position: relative;
+            left: 9px;
+            top: 3px;
+
+        }
+        .pokedex-heading {
+            font-size: 2.5rem;
+            margin-left: 3px;
+        }
+
+    @media all and (max-width: 270px){
+        .pokemon-button {
+    margin-left: -40px;
+        }
+
+    @media all and (max-width: 262px){
+        .pokemon-button {
+    margin-left: -45px;
+        }
+       }
+      }
+     }
+    }
+   }
