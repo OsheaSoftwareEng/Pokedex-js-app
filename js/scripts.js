@@ -1,14 +1,13 @@
     //pokemonRepository is a function contains pokemonlist which has an array of objects.
         let pokemonRepository = (function () {
-            let pokemonList = [
-                { name: 'Mewtwo', height: 2, type: 'Psychic'},
-                { name:'Hitmonlee', height: 1.5, type: 'Fighting'},
-                { name:'Raichu', height: 0.8, type: 'Eletric'}
-            ];
+            let pokemonList = [];
+            let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+            
             //add pokemon to the array with the push method.
         function add(pokemon) {
             pokemonList.push(pokemon);
         }
+        
         //function that grabs all pokemon stored in the pokemonList array.
         function getAll(){
             return pokemonList;
@@ -42,21 +41,62 @@
                 //this sets an event for the button to listen for mouse clicks on the element.
                 //once someone clicks the button, it'll log the pokemon name on the console.
                 button.addEventListener('click', function(showDetails) {
-                    console.log(pokemon.name);
+                    console.log(pokemon);
                 });
             }
+
+            function loadList() {
+                return fetch(apiUrl).then(function (response) {
+                  return response.json();
+                }).then(function (json) {
+                  json.results.forEach(function (item) {
+                    let pokemon = {
+                      name: item.name,
+                      detailsUrl: item.url
+                    };
+                    add(pokemon);
+                  });
+                }).catch(function (e) {
+                  console.error(e);
+                })
+              }
+            
+            function loadDetails(pokemon) {
+                let url = pokemon.detailsUrl;
+                return fetch(url).then(function (response) {
+                  return response.json();
+                }).then(function (details) {
+                  // Now we add the details to the item
+                  pokemon.imageUrl = details.sprites.front_default;
+                  pokemon.height = details.height;
+                  pokemon.types = details.types;
+                }).catch(function (e) {
+                  console.error(e);
+                });
+              }
+    
             //function to log the entire pokemon array of objects with their details.
         function showDetails(pokemon) {
-            console.log(pokemon);
-        }
+            loadDetails(pokemon).then(function () {
+                console.log(pokemon);
+        });
+    }
         //allows you to access the functions outside of the IIFE.
         return {
             add: add,
             getAll: getAll,
+            loadList: loadList,
             addListItem: addListItem,
+            loadDetails: loadDetails,
+            showDetails: showDetails
         }
     })();
+
         //this iterates through each object in the pokemon array and and adds all the pokemon to the ul as list items and buttons with an event listener.
-        pokemonRepository.getAll().forEach(function(pokemon){
-        pokemonRepository.addListItem(pokemon);   
+        pokemonRepository.loadList().then(function() {
+            // Now the data is loaded!
+            pokemonRepository.getAll().forEach(function(pokemon){
+            pokemonRepository.addListItem(pokemon);
+            });
         });
+
