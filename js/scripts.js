@@ -33,7 +33,7 @@
                 //this sets an event for the button to listen for mouse clicks on the element.
                 //once someone clicks the button, it'll log the pokemon name on the console.
                 button.addEventListener("click", function(event) {
-                    showDetails(pokemon);
+                    showModal(pokemon);
                 });
             }
 
@@ -54,6 +54,7 @@
           }
         
         function loadDetails(item) {
+
             let url = item.detailsUrl;
             return fetch(url).then(function (response) {
               return response.json();
@@ -61,7 +62,7 @@
               // Now we add the details to the item
               item.imageUrl = details.sprites.front_default;
               item.height = details.height;
-              item.types = details.types;
+              item.type = details.types;
             }).catch(function (e) {
               console.error(e);
             });
@@ -70,9 +71,78 @@
         //function to log the entire pokemon array of objects with their details.
           function showDetails(item) {
             pokemonRepository.loadDetails(item).then(function () {
-                console.log(item);
+              button.addEventListener('click', () => {
+                showModal(item);
+            });
         });
     }
+
+            function showModal (item) {
+            pokemonRepository.loadDetails(item).then(function () {
+                
+                let pokemonContainer = document.querySelector('#pokemon-container');
+                pokemonContainer.classList.add('is-visible');
+                pokemonContainer.innerHTML = '';
+                let pokeModal = document.createElement('div');
+                pokeModal.classList.add('poke-modal');
+
+
+                //dynamic h1 element creation for pokemon name
+                let pokemonName = document.createElement('h1');
+                pokemonName.innerText = item.name; 
+                pokemonName.classList.add('pokemon-Title');
+
+                //let imageContainer for modal creation
+                imageContainer = document.createElement("div");
+                imageContainer.classList.add("image-container");
+                
+                //pokemon image creation
+                pokemonImage = document.createElement("img");
+                pokemonImage.src = item.imageUrl;
+                pokemonImage.classList.add("pokemon-image");
+                
+                //pokemon height element creation
+                let pokemonHeight = document.createElement("p");
+                pokemonHeight.innerText = "Height: " + item.height;
+                pokemonHeight.classList.add("height");
+
+                //modal close button creation
+                let closeButtonElement = document.createElement('button');
+                closeButtonElement.classList.add('modal-close');
+                closeButtonElement.innerText = 'X';
+                closeButtonElement.addEventListener('click', hideModal);
+                
+                //putting modal in container and elements are put in modal.
+                pokeModal.appendChild(pokemonHeight);
+                pokeModal.appendChild(pokemonName);
+                pokeModal.appendChild(closeButtonElement);
+                pokeModal.appendChild(imageContainer);
+                pokemonContainer.appendChild(pokeModal);
+                imageContainer.appendChild(pokemonImage);
+
+                /*Hide Modal*/
+                function hideModal() {
+                  let pokemonContainer = document.querySelector("#pokemon-container")
+                  pokemonContainer.classList.remove('is-visible');          
+                }
+                
+                window.addEventListener('keydown', (e) => {
+                  if (e.key === 'Escape' && pokemonContainer.classList.contains('is-visible')) {
+                    hideModal();  
+                  }
+                });
+                
+                pokemonContainer.addEventListener('click', (e) => {
+                  // Since this is also triggered when clicking INSIDE the modal container,
+                  // We only want to close if the user clicks directly on the overlay
+                  let target = e.target;
+                  if (target === pokemonContainer) {
+                    hideModal();
+                  }
+
+                });
+            });
+          }
         
         //allows you to access the functions outside of the IIFE.
         return {
@@ -82,8 +152,11 @@
             addListItem: addListItem,
             loadDetails: loadDetails,
             showDetails: showDetails,
+            showModal: showModal,
             }
+          
         })();
+
 
         //this iterates through each object in the pokemon array and and adds all the pokemon to the ul as list items and buttons with an event listener.
             pokemonRepository.loadList().then(function() {
@@ -93,3 +166,15 @@
             });
         });
 
+        
+
+
+  
+  
+  
+  
+  
+  
+   
+  
+  
