@@ -1,251 +1,117 @@
-    :root {
-        --font-family: 'Press Start 2P', cursive;
-        
-    }
-    /*Generic Styles*/
-    html {
-        font-size: 62.5%;
-    }
+:root {
+  --font-family: "Press Start 2P", cursive;
+}
+/*Generic Styles*/
+html {
+  font-size: 62.5%;
+}
 
-    li {
-        list-style: none;
-    }
+li {
+  list-style: none;
+}
 
-    body {
-        background-color: #000000;
-        background-image: linear-gradient(315deg, #000000 0%, #958e69 74%);
-        font-family: var(--font-family);
-    }
+body {
+  background-image: url("../images/bgPokedex.jpg");
+  min-height: 100%;
+  background-attachment: fixed;
+  background-position: bottom center;
+  background-size: cover;
+  background-repeat: repeat-x;
+  font-family: var(--font-family);
+  text-align: center;
+}
 
+/*Page Heading Styles */
+.pokedex-heading {
+  width: 800px;
+  height: auto;
+  display: flex;
+}
 
-    /*Page Heading Styles */
-    .pokedex-heading {
-        font-size: 3.5rem;
-        color: #ffc800;
-        font-family: var(--H1font-family);
-        position: relative;
-        top: 15px;
-        right: 10px;
-    }
+/*.logo-header {
+  height: auto;
+  position: fixed; 
+  top: 0; 
+  width: 100%;
+  z-index: 1;
+  display: block;
+}
+*/
+.pokemon-list {
+  margin-top: -287px;
+}
 
-    .logo-header {
-        display: flex;
-        position: relative;
-        right: 35px;
-        min-width: 1653px;
-    }
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  background-color: #000000;
+  height: 150px;
+}
 
-    .pokemon-button {
-        width: 100%;
-        min-width: 250px; 
-        max-width: 300px; 
-        padding: 16px 18px;
-        background-color: #d2a813;
-        background-image: linear-gradient(315deg, #d2a813 0%, #000000 74%);
-        font-size: 1.8rem;
-        font-weight: bold;
-        color: azure;
-        border-radius: 5px;
-        cursor: pointer;
-    }
+.pokemon-button {
+  text-transform: uppercase;
+  width: 100%;
+  min-width: 250px;
+  max-width: 300px;
+  padding: 16px 18px;
+  background-color: #d2a813;
+  background-color: #fbab7e;
+  background-color: #fad961;
+  background-color: #fee140;
+  background-color: #d9afd9;
+  background-color: #fbab7e;
+  background-color: #ffe53b;
+  background-image: linear-gradient(147deg, #ffe53b 0%, #ff2525 74%);
+  box-shadow: 2px 2px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: black;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
-    .pokeball-logo {
-        width: 9%;
-        min-width: 9%;
-    }
+.list-group-item {
+  background-color: rgba(24, 26, 27, 0);
+  border: currentColor;
+}
 
+/*modal section*/
+.modal-content {
+  margin: auto;
+  display: inline-block;
+  box-sizing: border-box;
+  background-color: #d8ba4f;
+  background-image: linear-gradient(90deg, #d8ba4f 0%, #f76b1c 100%);
 
+  padding: 15px;
+  width: 350px;
+  height: 350px;
+  border-radius: 11px;
+  max-width: 700px;
+  text-align: left;
+  border: 2px solid gold;
+}
 
-    /*modal section*/
-    #pokemon-container {
-        display: none;
-      }
-      
-      #pokemon-container.is-visible {
-        position: fixed;
-        padding: 20px;
-        box-sizing: border-box;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        
-        /* to show it above other content */
-        z-index: 999; 
-        
-        /* to allow scrolling if the screen is not high enough*/
-        overflow: auto; 
-        
-        /* this is used to center the modal */
-        display: grid;
-        text-align: center;
-      }
-      
-      .poke-modal {
-        margin: auto;
-        display: inline-block;
-        box-sizing: border-box;
-        background-color: #772f1a;
-background-image: linear-gradient(315deg, #772f1a 0%, #f2a65a 74%);
-        padding: 15px;
-        width: 380px;
-        height: 380px;
-        border-radius: 11px;
-        max-width: 700px;
-        text-align: left;
-        border: 2px solid gold;
-      }
-      
-      .modal-close {
-        position: relative;
-        top: -26%;
-        left: 92%;
-        border: 0;
-        background: none;
-        color: #ffffff;
-        text-decoration: none;
-        padding: 10px 18px;
-        background-color: #000000;
-        border-radius: 8px;
-        cursor: pointer;
-      }
+.modal-dialog {
+  top: 25%;
+}
+.modal-title {
+  color: black;
+  margin-top: 0;
+  text-transform: uppercase;
+  position: relative;
+  bottom: 5%;
+  font-size: 2.7rem;
+}
 
-      .modal-close:hover {
-        background-color: red;
-        color: #000000;
-        transition-duration: 0.3s;
-      }
-      
-      .pokemon-Title   {
-        color: black;
-        margin-top: 0;
-        text-transform: uppercase;
-        position: relative;
-        bottom: 5%;
-        font-size: 2.7rem;
-      }
-      
-      .poke-modal p {
-        margin-bottom: 0
-      }
+.poke-modal p {
+  margin-bottom: 0;
+}
 
-      .pokemon-image {
-        width:250px;
-        height: 250px;
-      }
-
-      .image-container {
-        text-align: center;
-        position: relative;
-        bottom: 12%;
-      }
-
-      .height {
-        position: relative;
-        top: 90%;
-        font-size: 1.5rem;
-      }
-
-
-
-    /*Media Quieres*/
-    @media all and (max-width: 500px){
-        .pokedex-heading, .pokeball-logo {
-            position: relative;
-            right: 2.3%;
-        } 
-    @media all and (max-width: 363px){
-        .pokemon-button {
-            position: relative;
-            right: 6%;
-        }
-        .pokedex-heading {
-            font-size: 3rem;
-            position: relative;
-            right: 3.5%;
-        }
-
-    @media all and (max-width:328px){
-        .pokedex-heading {
-            position: relative;
-            right: 3.4%;
-        }
-    }    
-
-    @media all and (max-width:317px){
-        .pokeball-logo {
-            width: 8%;
-            min-width: 8%;
-        }
-        .pokedex-heading {
-            font-size: 2.8rem;
-        }
-    }
-
-    @media all and (max-width: 313px){
-        .pokemon-button {
-        position: relative;
-        right: 12%;
-        }
-
-    @media all and (max-width: 280px){
-        .pokemon-button {
-        position: relative;
-        right: 21%;
-
-
-        }
-        .pokeball-logo {
-            width: 6%;
-            min-width: 6%;
-            position: relative;
-            right:1.5%;
-            top: 3px;
-
-        }
-        .pokedex-heading {
-            font-size: 2.5rem;
-            position: relative;
-            right: 2%;
-        }
-       }
-      }
-     }
-    }
- 
-   /*Modal Media Quieres */
-   @media all and (min-width:310px) and (max-width: 480px) {
-    .poke-modal {
-        width: 280px;
-        height: 280px;
-        position: relative;
-        right: 4%;
-    }
-
-
-    .pokemon-Title {
-        position: relative;
-        bottom: 13%;
-        font-size: 2.3rem;
-    }
-
-    .image-container {
-        position: relative;
-        bottom: 33%;
-    }
-
-    .modal-close {
-        position: relative;
-        top: -33%;
-        left: 97%;
-        padding: 1px 7px;
-        border-radius: 9px;
-    }
-
-    .height {
-        position: relative;
-        top: 92%;
-    }
-    
-   }
+.modal-body {
+  width: 250px;
+  height: 250px;
+}
