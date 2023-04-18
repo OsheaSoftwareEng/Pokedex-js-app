@@ -19,4 +19,4 @@ I still need to clean up the UI/UX and add a hover state.
 
 ## Lessons Learned:
 
-I learned about DOM maanipulation and using APIs.
+I learned about DOM manipulation and using APIs.
