@@ -5,7 +5,7 @@ A Pokedex device application aspired from the Pokemon TV series. This app has ha
 
 **Link to project:** 
 
-![alt tag](https://imgur.com/F2ZOh5g.png)
+![alt tag](https://imgur.com/rEdSfqx.png)
 
 ## How It's Made:
 
