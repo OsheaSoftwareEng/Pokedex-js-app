@@ -10,6 +10,10 @@ li {
   list-style: none;
 }
 
+ul {
+  margin-top: 0;
+}
+
 body {
   background-image: url("../images/bgPokedex.jpg");
   min-height: 100%;
@@ -23,32 +27,16 @@ body {
 
 /*Page Heading Styles */
 .pokedex-heading {
-  width: 800px;
+  width: 850px;
   height: auto;
-  display: flex;
 }
-
-/*.logo-header {
-  height: auto;
-  position: fixed; 
-  top: 0; 
-  width: 100%;
-  z-index: 1;
-  display: block;
+.logo-header {
+  height: 800px;
 }
-*/
 .pokemon-list {
   margin-top: -287px;
-}
-
-.fixed-top {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 1030;
-  background-color: #000000;
-  height: 150px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
 
 .pokemon-button {
@@ -85,7 +73,6 @@ body {
   box-sizing: border-box;
   background-color: #d8ba4f;
   background-image: linear-gradient(90deg, #d8ba4f 0%, #f76b1c 100%);
-
   padding: 15px;
   width: 350px;
   height: 350px;
@@ -107,11 +94,29 @@ body {
   font-size: 2.7rem;
 }
 
-.poke-modal p {
-  margin-bottom: 0;
-}
-
 .modal-body {
   width: 250px;
   height: 250px;
+}
+
+@media all and (max-width: 761px) {
+  .pokedex-heading {
+    position: relative;
+    right: 12%;
+  }
+  .pokedex-heading {
+    width: 658px;
+    height: auto;
+  }
+}
+
+@media all and (max-width: 507px) {
+  .pokedex-heading {
+    position: relative;
+    right: 11%;
+  }
+  .pokedex-heading {
+    width: 588px;
+    height: auto;
+  }
 }
