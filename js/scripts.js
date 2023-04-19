@@ -34,6 +34,9 @@ let pokemonRepository = (function () {
     newPokemonList.append(listItem);
     //this sets an event for the button to listen for mouse clicks on the element.
     //once someone clicks the button, it'll log the pokemon name on the console.
+    button.on("click", function (event) {
+      showModal(pokemon);
+    });
   }
   function loadList() {
     return fetch(apiUrl)
@@ -95,7 +98,7 @@ let pokemonRepository = (function () {
       pokemonImage.attr("src", item.imageUrl);
       let pokemonHeight = $("<p>" + "Height: " + item.height + "</p>");
       let pokemonWeight = $("<p>" + "Weight: " + item.weight + "</p>");
-      let pokemonType = $("<p>" + "Types: " + item.types + "</p>");
+      let pokemonType = $("<p>" + "Types: " + item.type + "</p>");
       let pokemonAbilities = $("<p>" + "Abilities: " + item.abilities + "</p>");
 
       //putting modal in container and elements are put in modal.
