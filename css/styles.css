@@ -69,7 +69,15 @@ body {
 }
 
 .btn-outline-danger {
+  color: rgb(180, 180, 59);
   transition: 0.4s;
+  border: 1px solid rgb(66, 66, 216);
+}
+
+.btn-outline-danger:hover {
+  background-color: rgb(66, 66, 216);
+  color: white;
+  border: 1px solid white;
 }
 
 .navbar-nav {
@@ -93,10 +101,11 @@ body {
 
 .navbar-dark .navbar-nav .nav-link {
   transition: 0.5s;
+  color: rgb(180, 180, 59);
 }
 
 .navbar-dark .navbar-nav .nav-link:hover {
-  color: white;
+  color: rgb(66, 66, 216);
 }
 
 .pokemon-button:hover {
@@ -158,29 +167,6 @@ body {
   .form-inline {
     position: relative;
     right: 0%;
-  }
-
-  .navbar-nav {
-    color: black;
-  }
-  .navbar-nav:hover {
-    color: white;
-  }
-
-  .btn-outline-danger {
-    color: white;
-    border-color: #fff;
-    background-color: black;
-    transition: 0.4s;
-  }
-  .btn-outline-danger:hover {
-    color: black;
-    background-color: white;
-    border-color: black;
-  }
-
-  .navbar-dark .navbar-nav .nav-link {
-    color: black;
   }
 
   .navbar-toggler {
