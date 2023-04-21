@@ -16,8 +16,8 @@ let pokemonRepository = (function () {
   function addListItem(pokemon) {
     //new variable that holds the <ul> element in the index.html
     let newPokemonList = $(".pokemon-list");
-    //new variable creating a virtual <li> element
 
+    //new variable creating a virtual <li> element
     let listItem = $('<li class= "list-group-item"> </li>');
 
     //new variable creating an virtual button element
@@ -26,14 +26,9 @@ let pokemonRepository = (function () {
         pokemon.name +
         "</button>"
     );
-    //This code makes the button a child to the <ul> element in the index.html
     newPokemonList.append(button);
-    //this makes the button a child to the listitem variable which is a <li> element.
     listItem.append(button);
-    //this makes the list item which is a <li> element a child to the <ul> element.
     newPokemonList.append(listItem);
-    //this sets an event for the button to listen for mouse clicks on the element.
-    //once someone clicks the button, it'll log the pokemon name on the console.
     button.on("click", function (event) {
       showModal(pokemon);
     });
@@ -74,7 +69,7 @@ let pokemonRepository = (function () {
       });
   }
 
-  //function to log the entire pokemon array of objects with their details.
+  //function to log the entire pokemon array of objects with their details in the bootstrap modal.
   function showDetails(item) {
     pokemonRepository.loadDetails(item).then(function () {
       button.addEventListener("click", () => {
@@ -84,8 +79,8 @@ let pokemonRepository = (function () {
   }
 
   function showModal(item) {
+    //selecting the bootstrap modal content
     pokemonRepository.loadDetails(item).then(function () {
-      let modalContent = $(".modal-content");
       let modalBody = $(".modal-body");
       let modalTitle = $(".modal-title");
       let modalHeader = $(".modal-header");
@@ -93,6 +88,7 @@ let pokemonRepository = (function () {
       modalBody.empty();
       modalTitle.empty();
 
+      //declaring all the pokemon/stats that will be in the modal
       let pokemonName = $("<h1>" + item.name + "</h1>");
       let pokemonImage = $('<img class= "modal-image" style=width:50%">');
       pokemonImage.attr("src", item.imageUrl);
@@ -111,6 +107,28 @@ let pokemonRepository = (function () {
     });
   }
 
+  // search for a pokemon
+  let searchbar = document.querySelector("#search-bar");
+  searchbar.addEventListener("input", function () {
+    pokemonRepository.filterSearch(searchbar);
+  });
+
+  function filterSearch(searchbar) {
+    let filterValue = searchbar.value.toLowerCase();
+
+    // filter the pokemonList array based on the filterValue
+    let filteredPokemon = pokemonList.filter(function (pokemon) {
+      return pokemon.name.toLowerCase().indexOf(filterValue) > -1;
+    });
+
+    // update the displayed list of Pokemon based on the filtered results
+    let pokemonListElement = document.querySelector(".pokemon-list");
+    pokemonListElement.innerHTML = "";
+    filteredPokemon.forEach(function (pokemon) {
+      pokemonRepository.addListItem(pokemon);
+    });
+  }
+
   //allows you to access the functions outside of the IIFE.
   return {
     add: add,
@@ -120,6 +138,7 @@ let pokemonRepository = (function () {
     loadDetails: loadDetails,
     showDetails: showDetails,
     showModal: showModal,
+    filterSearch: filterSearch,
   };
 })();
 
