@@ -14,13 +14,38 @@
 </head>
 <body>
   <header>
-    <div class="logo-header">
-      <a class="navbar-brand" href="#">
-        <img class="pokedex-heading" src="./images/Pokedex-logo.png" alt="pokedex image">
-      </a>
-    </div>
-  </header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-color">
+      <a class="navbar-brand" href="index.html"><img class="nav-logo" src="./images/pokedexlogo.svg"
+          alt="pokemon logo"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul role="menubar" class="navbar-nav mr-auto navbar-list">
+          <li role="presentation" class="nav-item ">
+            <a class="nav-link" href="index.html" role="menuitem" target="_blank">Home</a>
+          </li>
+          <li role="presentation" class="nav-item">
+            <a class="nav-link" href="https://osheasoftwareeng.github.io/Website-Portfolio/index.html" role="menuitem"
+              target="_blank">My Page</a>
+          </li>
+          <li role="presentation" class="nav-item">
+            <a class="nav-link" href="https://github.com/OsheaSoftwareEng" target="_blank" role="menuitem">GitHub</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input id="search-bar" class="form-control mr-sm-2" type=" pokemon" placeholder="Search Pokemon"
+            aria-label="Search Pokemon">
+          <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+  </header>
+  <div class="hero-header">
+    <img class="pokedex-heading" src="./images/Pokedex-logo.png" alt="pokedex image">
+  </div>
   <ul class="pokemon-list list-group">
   </ul>
   <!-- Modal Section -->
@@ -55,5 +80,6 @@
   <script src="./js/promise-polyfill.js"></script>
   <script src="./js/fetch.polyfill.js"></script>
   <script src="./js/scripts.js"></script>
+  <!-- <script src="js/tota11y.min.js"></script> -->
 </body>
 </html>
