@@ -1,7 +1,7 @@
 //pokemonRepository is a function contains pokemonlist which has an array of objects.
-let pokemonRepository = (function () {
-  let pokemonList = [];
-  let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
+const pokemonRepository = (function () {
+  const pokemonList = [];
+  const apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
 
   //add pokemon to the array with the push method.
   function add(pokemon) {
@@ -16,13 +16,13 @@ let pokemonRepository = (function () {
   //function to add pokemon to a list
   function addListItem(pokemon) {
     //new variable that holds the <ul> element in the index.html
-    let newPokemonList = $(".pokemon-list");
+    const newPokemonList = $(".pokemon-list");
 
     //new variable creating a virtual <li> element
-    let listItem = $('<li class= "list-group-item"> </li>');
+    const listItem = $('<li class= "list-group-item"> </li>');
 
     //new variable creating an virtual button element
-    let button = $(
+    const button = $(
       '<button class="pokemon-button" data-toggle="modal" data-target="#myModal">' +
         pokemon.name +
         "</button>"
@@ -60,7 +60,7 @@ let pokemonRepository = (function () {
   }
   //loads pokemon details from apiUrl
   function loadDetails(item) {
-    let url = item.detailsUrl;
+    const url = item.detailsUrl;
     return fetch(url)
       .then(function (response) {
         return response.json();
@@ -91,21 +91,21 @@ let pokemonRepository = (function () {
   function showModal(item) {
     //selecting the bootstrap modal content
     pokemonRepository.loadDetails(item).then(function () {
-      let modalBody = $(".modal-body");
-      let modalTitle = $(".modal-title");
-      let modalHeader = $(".modal-header");
+      const modalBody = $(".modal-body");
+      const modalTitle = $(".modal-title");
+      const modalHeader = $(".modal-header");
 
       //removing content from title and body
       modalBody.empty();
       modalTitle.empty();
 
       //declaring all the pokemon/stats that will be in the modal
-      let pokemonName = $("<h1>" + item.name + "</h1>");
-      let pokemonHeight = $("<p>" + "Height: " + item.height + "</p>");
-      let pokemonWeight = $("<p>" + "Weight: " + item.weight + "</p>");
+      const pokemonName = $("<h1>" + item.name + "</h1>");
+      const pokemonHeight = $("<p>" + "Height: " + item.height + "</p>");
+      const pokemonWeight = $("<p>" + "Weight: " + item.weight + "</p>");
 
       //pokemon image declared
-      let pokemonImage = $('<img class= "modal-image" style=width:50%">');
+      const pokemonImage = $('<img class= "modal-image" style=width:50%">');
       pokemonImage.attr("src", item.imageUrl);
 
       //adding pokemon types to modal
