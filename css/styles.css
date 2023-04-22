@@ -33,12 +33,11 @@ body {
 
 .navbar {
   z-index: 9999;
-  width: 156%;
 }
 
 .navbar-list {
   position: relative;
-  left: 21%;
+  left: 35%;
 }
 .hero-header {
   height: 800px;
@@ -47,6 +46,7 @@ body {
 .bg-color {
   background-color: black;
   height: 80px;
+  width: 100%;
 }
 
 .pokemon-list {
@@ -61,11 +61,6 @@ body {
   position: relative;
   right: 5%;
   bottom: 1%;
-}
-
-.form-inline {
-  position: relative;
-  right: 39%;
 }
 
 .btn-outline-danger {
@@ -151,17 +146,17 @@ body {
 }
 
 /*Media Queires*/
-@media all and (max-width: 1400px) {
+@media all and (max-width: 1069px) {
   .navbar-list {
     position: relative;
-    left: 17%;
+    left: 19%;
   }
 }
 
 @media all and (max-width: 991px) {
   .navbar-list {
     position: relative;
-    left: -43%;
+    left: -1%;
   }
 
   .form-inline {
@@ -169,17 +164,24 @@ body {
     right: 0%;
   }
 
+  .navbar-expand-sm .navbar-nav {
+    flex-direction: column;
+  }
+
   .navbar-toggler {
     position: relative;
     right: 37%;
   }
 }
-
+@media all and (max-width: 900px) {
+  .form-control {
+    width: 26%;
+  }
+}
 @media all and (max-width: 879px) {
   .navbar-toggler {
     position: relative;
-    bottom: 5%;
-    right: 37%;
+    right: 4%;
   }
 }
 
@@ -191,10 +193,46 @@ body {
     height: auto;
   }
 }
+@media all and (max-width: 625px) {
+  #search-bar {
+    width: 35%;
+  }
+
+  .form-inline {
+    position: relative;
+    right: -5%;
+  }
+  .navbar-expand-sm .navbar-nav {
+    flex-direction: row;
+  }
+}
 
 @media all and (max-width: 575px) {
   .form-control {
     width: 26%;
+  }
+
+  .navbar-collapse {
+    background-color: black;
+    height: 133px;
+    width: 487px;
+    position: relative;
+    right: 97px;
+    flex-basis: 351px;
+  }
+  #navbarSupportedContent.navbar-collapse.collapse.show {
+    width: 550px;
+  }
+  .form-inline {
+    position: relative;
+    right: -29%;
+  }
+  .navbar-expand-sm .navbar-nav {
+    flex-direction: column;
+  }
+  .modal-dialog {
+    top: 43%;
+    right: 16.5%;
   }
 }
 
@@ -204,18 +242,5 @@ body {
     right: 15%;
     width: 541px;
     height: auto;
-  }
-  .form-control {
-    width: 26%;
-  }
-
-  .form-inline {
-    position: relative;
-    right: 2%;
-  }
-
-  .navbar-list {
-    position: relative;
-    left: -41%;
   }
 }
