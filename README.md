@@ -2,9 +2,9 @@
 # Official Pokedex Application
 A Pokedex device application aspired from the Pokemon TV series. This app has a collection of Pokemon that are being called at a press of a button from an API database of Pokemon. Once the Pokemon are called, the Pokemon image, Name and Height are displayed as a popup modal.
 
-**Link to project:** 
+**Link to project:** https://osheasoftwareeng.github.io/Pokedex-js-app/
 
-![alt tag](https://imgur.com/HMPu6NU.png)
+![alt tag](https://imgur.com/APSKzxW.png)
 
 ## How It's Made:
 
