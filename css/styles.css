@@ -20,7 +20,7 @@ body {
   background-attachment: fixed;
   background-position: bottom center;
   background-size: cover;
-  background-repeat: repeat-x;
+  background-repeat: no-repeat;
   font-family: var(--font-family);
   text-align: center;
 }
@@ -208,6 +208,11 @@ body {
 }
 
 @media all and (max-width: 575px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
   .form-control {
     width: 26%;
   }
@@ -230,10 +235,6 @@ body {
   .navbar-expand-sm .navbar-nav {
     flex-direction: column;
   }
-  .modal-dialog {
-    top: 43%;
-    right: 16.5%;
-  }
 }
 
 @media all and (max-width: 530px) {
@@ -241,6 +242,15 @@ body {
     position: relative;
     right: 15%;
     width: 541px;
+    height: auto;
+  }
+}
+
+@media all and (max-width: 400px) {
+  .pokedex-heading {
+    position: relative;
+    right: 16%;
+    width: 500px;
     height: auto;
   }
 }
