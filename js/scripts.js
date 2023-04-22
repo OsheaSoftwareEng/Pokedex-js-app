@@ -62,7 +62,10 @@ let pokemonRepository = (function () {
         // Now we add the details to the item
         item.imageUrl = details.sprites.front_default;
         item.height = details.height;
-        item.type = details.types;
+        item.weight = details.weight;
+        item.abilities = details.abilities;
+        item.types = details.types;
+        console.log(item.types);
       })
       .catch(function (e) {
         console.error(e);
@@ -94,15 +97,25 @@ let pokemonRepository = (function () {
       pokemonImage.attr("src", item.imageUrl);
       let pokemonHeight = $("<p>" + "Height: " + item.height + "</p>");
       let pokemonWeight = $("<p>" + "Weight: " + item.weight + "</p>");
-      let pokemonType = $("<p>" + "Types: " + item.type + "</p>");
-      let pokemonAbilities = $("<p>" + "Abilities: " + item.abilities + "</p>");
+      // let pokemonAbilities = $("<p>" + "Abilities: " + item.abilities + "</p>");
 
+      let pokemonTypes = "";
+      item.types.forEach(function (types) {
+        pokemonTypes += ["<p>" + types.type.name + "</p>"];
+      });
+
+      let pokemonAbilities = "";
+      item.abilities.forEach(function (abilities) {
+        pokemonAbilities += [
+          "<li>" + "Abilities: " + abilities.ability.name + "</li>",
+        ];
+      });
       //putting modal in container and elements are put in modal.
       modalTitle.append(pokemonName);
       modalBody.append(pokemonImage);
       modalBody.append(pokemonHeight);
       modalBody.append(pokemonWeight);
-      modalBody.append(pokemonType);
+      modalBody.append(pokemonTypes);
       modalBody.append(pokemonAbilities);
     });
   }
