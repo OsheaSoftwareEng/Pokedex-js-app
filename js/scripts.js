@@ -65,7 +65,6 @@ let pokemonRepository = (function () {
         item.weight = details.weight;
         item.abilities = details.abilities;
         item.types = details.types;
-        console.log(item.types);
       })
       .catch(function (e) {
         console.error(e);
@@ -99,11 +98,13 @@ let pokemonRepository = (function () {
       let pokemonWeight = $("<p>" + "Weight: " + item.weight + "</p>");
       // let pokemonAbilities = $("<p>" + "Abilities: " + item.abilities + "</p>");
 
+      //adding pokemon types to modal
       let pokemonTypes = "";
       item.types.forEach(function (types) {
         pokemonTypes += ["<p>" + types.type.name + "</p>"];
       });
 
+      //adding pokemon abilities to modal
       let pokemonAbilities = "";
       item.abilities.forEach(function (abilities) {
         pokemonAbilities += [
@@ -126,6 +127,7 @@ let pokemonRepository = (function () {
     pokemonRepository.filterSearch(searchbar);
   });
 
+  //filter search to find pokemon
   function filterSearch(searchbar) {
     let filterValue = searchbar.value.toLowerCase();
 
