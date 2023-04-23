@@ -90,7 +90,7 @@ body {
   font-size: 1.8rem;
   font-weight: bold;
   color: black;
-  border-radius: 5px;
+  border-radius: 23px;
   cursor: pointer;
 }
 
@@ -134,7 +134,7 @@ body {
 
 .abilities-text {
   position: relative;
-  bottom: 108%;
+  bottom: 114%;
   right: 7%;
   font-size: 1.5rem;
   color: #ffcd01;
@@ -191,7 +191,7 @@ body {
 
 .poke-type {
   position: relative;
-  bottom: 95%;
+  bottom: 98%;
   font-size: 1.5rem;
   color: #ffcd01;
   text-transform: uppercase;
@@ -200,7 +200,7 @@ body {
 
 .poke-abilities {
   position: relative;
-  bottom: 78%;
+  bottom: 81%;
   right: 7%;
   font-size: 1.3rem;
   color: #ffcd01;
