@@ -1,5 +1,7 @@
 :root {
   --font-family: "Press Start 2P", cursive;
+  --Primary-Color: #ffcd01;
+  --Secondary-Color: #c30b0b;
 }
 /*Generic Styles*/
 html {
@@ -25,20 +27,37 @@ body {
   text-align: center;
 }
 
-/*Page Heading Styles */
-.pokedex-heading {
-  width: 850px;
-  height: auto;
-}
-
+/*Navbar Section Styles */
 .navbar {
   z-index: 9999;
+}
+
+.navbar-nav {
+  font-size: 1.3rem;
+}
+
+.nav-logo {
+  width: 167px;
+  height: auto;
+  position: relative;
+  right: 5%;
+  bottom: 1%;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  transition: 0.5s;
+  color: var(--Primary-Color);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: rgb(66, 66, 216);
 }
 
 .navbar-list {
   position: relative;
   left: 35%;
 }
+
 .hero-header {
   height: 800px;
 }
@@ -55,16 +74,14 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
 
-.nav-logo {
-  width: 167px;
+.hero-image {
+  width: 850px;
   height: auto;
-  position: relative;
-  right: 5%;
-  bottom: 1%;
 }
 
+/*search bar styles*/
 .btn-outline-danger {
-  color: rgb(180, 180, 59);
+  color: var(--Primary-Color);
   transition: 0.4s;
   border: 1px solid rgb(66, 66, 216);
 }
@@ -75,10 +92,7 @@ body {
   border: 1px solid white;
 }
 
-.navbar-nav {
-  font-size: 1.3rem;
-}
-
+/* pokemon button styles */
 .pokemon-button {
   text-transform: uppercase;
   width: 100%;
@@ -92,15 +106,6 @@ body {
   color: black;
   border-radius: 23px;
   cursor: pointer;
-}
-
-.navbar-dark .navbar-nav .nav-link {
-  transition: 0.5s;
-  color: rgb(180, 180, 59);
-}
-
-.navbar-dark .navbar-nav .nav-link:hover {
-  color: rgb(66, 66, 216);
 }
 
 .pokemon-button:hover {
@@ -118,7 +123,6 @@ body {
   display: inline-block;
   box-sizing: border-box;
   background-color: #000000de;
-  /* background-image: linear-gradient(90deg, #d8ba4f 0%, #f76b1c 100%); */
   padding: 15px;
   width: 350px;
   height: 350px;
@@ -129,30 +133,22 @@ body {
 }
 
 .modal-header {
-  border-bottom: 1px solid #c30b0b;
-}
-
-.abilities-text {
-  position: relative;
-  bottom: 114%;
-  right: 7%;
-  font-size: 1.5rem;
-  color: #ffcd01;
+  border-bottom: 1px solid var(--Secondary-Color);
 }
 
 .modal-footer {
-  border-top: 1px solid #c30b0b;
+  border-top: 1px solid var(--Secondary-Color);
 }
 
 .close {
-  color: #f00;
+  color: var(--Secondary-Color);
 }
 
 .modal-dialog {
   top: 25%;
 }
 .modal-title {
-  color: #ffcd01;
+  color: var(--Primary-Color);
   margin-top: 0;
   text-transform: uppercase;
   position: relative;
@@ -178,7 +174,7 @@ body {
   bottom: 98%;
   right: 7%;
   font-size: 1.5rem;
-  color: #ffcd01;
+  color: var(--Primary-Color);
 }
 
 .poke-weight {
@@ -186,14 +182,14 @@ body {
   bottom: 97%;
   right: 7%;
   font-size: 1.4rem;
-  color: #ffcd01;
+  color: var(--Primary-Color);
 }
 
 .poke-type {
   position: relative;
   bottom: 98%;
   font-size: 1.5rem;
-  color: #ffcd01;
+  color: var(--Primary-Color);
   text-transform: uppercase;
   left: -7%;
 }
@@ -203,8 +199,16 @@ body {
   bottom: 81%;
   right: 7%;
   font-size: 1.3rem;
-  color: #ffcd01;
+  color: var(--Primary-Color);
   text-transform: capitalize;
+}
+
+.abilities-text {
+  position: relative;
+  bottom: 114%;
+  right: 7%;
+  font-size: 1.5rem;
+  color: var(--Primary-Color);
 }
 
 /*Media Queires*/
@@ -248,7 +252,7 @@ body {
 }
 
 @media all and (max-width: 761px) {
-  .pokedex-heading {
+  .hero-image {
     position: relative;
     right: 12%;
     width: 658px;
@@ -300,7 +304,7 @@ body {
 }
 
 @media all and (max-width: 530px) {
-  .pokedex-heading {
+  .hero-image {
     position: relative;
     right: 15%;
     width: 541px;
@@ -309,7 +313,7 @@ body {
 }
 
 @media all and (max-width: 400px) {
-  .pokedex-heading {
+  .hero-image {
     position: relative;
     right: 16%;
     width: 500px;
