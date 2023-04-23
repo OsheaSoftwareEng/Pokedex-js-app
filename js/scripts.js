@@ -101,24 +101,32 @@ const pokemonRepository = (function () {
 
       //declaring all the pokemon/stats that will be in the modal
       const pokemonName = $("<h1>" + item.name + "</h1>");
-      const pokemonHeight = $("<p>" + "Height: " + item.height + "</p>");
-      const pokemonWeight = $("<p>" + "Weight: " + item.weight + "</p>");
+      const pokemonHeight = $(
+        '<p class= "poke-height">' + "Height: " + item.height + "</p>"
+      );
+
+      const abilitiesText = $("<p>" + "Abilities: " + "</p>");
+      abilitiesText.addClass("abilities-text");
+
+      const pokemonWeight = $(
+        '<p class= "poke-weight">' + "Weight: " + item.weight + "</p>"
+      );
 
       //pokemon image declared
-      const pokemonImage = $('<img class= "modal-image" style=width:50%">');
+      const pokemonImage = $('<img class= "modal-image">');
       pokemonImage.attr("src", item.imageUrl);
 
       //adding pokemon types to modal
       let pokemonTypes = "";
       item.types.forEach(function (types) {
-        pokemonTypes += ["<p>" + types.type.name + "</p>"];
+        pokemonTypes += ['<p class="poke-type">' + types.type.name + "</p>"];
       });
 
       //adding pokemon abilities to modal
       let pokemonAbilities = "";
       item.abilities.forEach(function (abilities) {
         pokemonAbilities += [
-          "<li>" + "Abilities: " + abilities.ability.name + "</li>",
+          '<li class="poke-abilities">' + abilities.ability.name + "</li>",
         ];
       });
 
@@ -129,6 +137,7 @@ const pokemonRepository = (function () {
       modalBody.append(pokemonWeight);
       modalBody.append(pokemonTypes);
       modalBody.append(pokemonAbilities);
+      modalBody.append(abilitiesText);
     });
   }
 
