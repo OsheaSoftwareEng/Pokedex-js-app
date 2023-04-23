@@ -117,22 +117,42 @@ body {
   margin: auto;
   display: inline-block;
   box-sizing: border-box;
-  background-color: #d8ba4f;
-  background-image: linear-gradient(90deg, #d8ba4f 0%, #f76b1c 100%);
+  background-color: #000000de;
+  /* background-image: linear-gradient(90deg, #d8ba4f 0%, #f76b1c 100%); */
   padding: 15px;
   width: 350px;
   height: 350px;
-  border-radius: 11px;
+  border-radius: 43px;
   max-width: 700px;
   text-align: left;
-  border: 2px solid gold;
+  border: 6px solid #ffffff;
+}
+
+.modal-header {
+  border-bottom: 1px solid #c30b0b;
+}
+
+.abilities-text {
+  position: relative;
+  bottom: 108%;
+  right: 7%;
+  font-size: 1.5rem;
+  color: #ffcd01;
+}
+
+.modal-footer {
+  border-top: 1px solid #c30b0b;
+}
+
+.close {
+  color: #f00;
 }
 
 .modal-dialog {
   top: 25%;
 }
 .modal-title {
-  color: black;
+  color: #ffcd01;
   margin-top: 0;
   text-transform: uppercase;
   position: relative;
@@ -143,6 +163,48 @@ body {
 .modal-body {
   width: 250px;
   height: 250px;
+}
+
+.modal-image {
+  position: relative;
+  left: 45%;
+  bottom: 1%;
+  width: 240px;
+  height: auto;
+}
+
+.poke-height {
+  position: relative;
+  bottom: 98%;
+  right: 7%;
+  font-size: 1.5rem;
+  color: #ffcd01;
+}
+
+.poke-weight {
+  position: relative;
+  bottom: 97%;
+  right: 7%;
+  font-size: 1.4rem;
+  color: #ffcd01;
+}
+
+.poke-type {
+  position: relative;
+  bottom: 95%;
+  font-size: 1.5rem;
+  color: #ffcd01;
+  text-transform: uppercase;
+  left: -7%;
+}
+
+.poke-abilities {
+  position: relative;
+  bottom: 78%;
+  right: 7%;
+  font-size: 1.3rem;
+  color: #ffcd01;
+  text-transform: capitalize;
 }
 
 /*Media Queires*/
