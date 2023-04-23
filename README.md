@@ -18,4 +18,4 @@ I still need to clean up the UI/UX and add more data such as hp, attack, and def
 
 ## Lessons Learned:
 
-I learned about creating Dom elements in JavaScript and fetching data from an api and having that data displayed from an external source. I also learned how to convert an existing project and optimaize it with the library bootstrap
+I learned about creating Dom elements in JavaScript and fetching data from an api and having that data displayed from an external source. I also learned how to convert an existing project and optimaize it with the framework bootstrap.
