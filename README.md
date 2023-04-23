@@ -4,7 +4,7 @@ A Pokedex device application aspired from the Pokemon TV series. This app has a 
 
 **Link to project:** https://osheasoftwareeng.github.io/Pokedex-js-app/
 
-![alt tag](https://imgur.com/APSKzxW.png)
+![alt tag](https://imgur.com/ck1tde3.png)
 
 ## How It's Made:
 
