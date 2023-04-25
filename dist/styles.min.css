@@ -229,6 +229,9 @@ body {
     width: 658px;
     height: auto;
   }
+  .pokemon-list {
+    margin-top: -356px;
+  }
 }
 @media all and (max-width: 625px) {
   #search-bar {
@@ -282,6 +285,9 @@ body {
     right: 15%;
     width: 541px;
     height: auto;
+  }
+  .pokemon-list {
+    margin-top: -458px;
   }
 }
 @media all and (max-width: 400px) {
